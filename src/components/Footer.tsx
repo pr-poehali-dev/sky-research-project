@@ -8,7 +8,7 @@ export function Footer() {
           <span className="text-2xl float-2">✨</span>
         </div>
         <p className="text-sm" style={{ color: "hsl(var(--muted-foreground))" }}>
-          15 июня 2025 · Ресторан «Белая роза»
+          11 июля 2026 · Кафе «Валенок», пос. Апраксино
         </p>
         <div className="mt-6 text-lg">
           {"💖 💗 💓 💞 💝".split(" ").map((h, i) => (
