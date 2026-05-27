@@ -6,7 +6,7 @@ export function Philosophy() {
           {/* Left: Image */}
           <div className="relative aspect-[4/5] rounded-3xl overflow-hidden reveal-left">
             <img
-              src="/professional-woman-portrait--soft-lighting--neutra.jpg"
+              src="https://cdn.poehali.dev/projects/4050ba9f-16bf-4ac2-8ab7-2d829154dd23/bucket/98bc7804-0b11-42e1-8ab7-05659c4e52c9.jpg"
               alt="Именинница"
               className="w-full h-full object-cover"
             />
