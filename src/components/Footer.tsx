@@ -4,7 +4,7 @@ export function Footer() {
       <div className="max-w-2xl mx-auto">
         <div className="flex items-center justify-center gap-3 mb-4">
           <span className="text-2xl float-1">🌸</span>
-          <span className="font-serif text-xl italic">С любовью для вас</span>
+          <span className="font-serif text-xl italic">С любовью, ваша именинница</span>
           <span className="text-2xl float-2">✨</span>
         </div>
         <p className="text-sm" style={{ color: "hsl(var(--muted-foreground))" }}>

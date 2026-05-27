@@ -6,20 +6,20 @@ export function Testimonial() {
 
         <blockquote className="font-serif text-3xl md:text-4xl lg:text-5xl leading-tight tracking-tight mb-10 text-balance reveal"
           style={{ color: "hsl(var(--foreground))" }}>
-          «Ты — сердце нашей семьи. Твоя улыбка освещает нашу жизнь,
-          твоя забота согревает самые холодные дни.
-          С юбилеем, наша любимая!»
+          «Я прожила 45 прекрасных лет — и лучшее в них
+          это вы, мои дорогие. Позвольте мне отпраздновать
+          этот день вместе с вами!»
         </blockquote>
 
         <div className="flex items-center justify-center gap-4 reveal">
           <div className="w-14 h-14 rounded-full flex items-center justify-center text-2xl"
             style={{ background: "hsla(330,50%,60%,0.15)" }}>
-            💕
+            🌸
           </div>
           <div className="text-left">
-            <p className="font-medium">С безграничной любовью</p>
+            <p className="font-medium">С теплом и нежностью,</p>
             <p className="text-sm" style={{ color: "hsl(var(--muted-foreground))" }}>
-              Ваши родные и близкие
+              Ваша именинница
             </p>
           </div>
         </div>

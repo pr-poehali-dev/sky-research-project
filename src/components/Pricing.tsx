@@ -76,11 +76,11 @@ export function Pricing() {
 
           <div className="text-5xl mb-6 sparkle-anim">🎉</div>
           <h3 className="font-serif text-3xl md:text-4xl mb-4 italic">
-            Будем рады видеть вас!
+            Я буду рада вас видеть!
           </h3>
           <p className="text-lg opacity-90 mb-8 max-w-xl mx-auto">
-            Подтвердите, пожалуйста, своё присутствие до 10 июня,
-            чтобы мы могли подготовиться к встрече.
+            Пожалуйста, сообщите мне о своём присутствии до 10 июня —
+            чтобы я могла подготовиться к встрече с вами!
           </p>
           <a
             href="#confirm"

@@ -18,10 +18,10 @@ export function Contact() {
             Подтверждение
           </span>
           <h2 className="font-serif text-4xl md:text-5xl tracking-tight mb-4">
-            Вы придёте? 🎊
+            Придёте? 🎊
           </h2>
           <p style={{ color: "hsl(var(--muted-foreground))" }}>
-            Сообщите нам о вашем присутствии — мы будем вас ждать!
+            Сообщите мне о своём присутствии — я буду вас ждать с нетерпением!
           </p>
         </div>
 
@@ -29,9 +29,9 @@ export function Contact() {
           <div className="reveal visible text-center p-12 rounded-3xl border"
             style={{ borderColor: "hsl(var(--border))", background: "hsl(var(--card))" }}>
             <div className="text-6xl mb-6 sparkle-anim">🎉</div>
-            <h3 className="font-serif text-2xl mb-3">Спасибо! Ждём вас!</h3>
+            <h3 className="font-serif text-2xl mb-3">Спасибо! Жду вас!</h3>
             <p style={{ color: "hsl(var(--muted-foreground))" }}>
-              Мы очень рады, что вы будете с нами в этот особенный день.
+              Я так рада, что вы будете со мной в этот особенный день!
             </p>
           </div>
         ) : (
@@ -93,10 +93,10 @@ export function Contact() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-2">Пожелания имениннице (необязательно)</label>
+              <label className="block text-sm font-medium mb-2">Ваши пожелания мне (необязательно)</label>
               <textarea
                 rows={3}
-                placeholder="Напишите тёплые слова..."
+                placeholder="Напишите тёплые слова — я обязательно прочту!"
                 value={form.wishes}
                 onChange={(e) => setForm({ ...form, wishes: e.target.value })}
                 className="w-full px-4 py-3 rounded-2xl border outline-none transition-colors duration-300 resize-none"

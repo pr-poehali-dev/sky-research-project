@@ -25,28 +25,28 @@ export function Hero() {
           style={{ background: "hsla(330,50%,60%,0.12)", border: "1px solid hsla(330,50%,60%,0.25)" }}>
           <span className="text-2xl float-1">🌸</span>
           <span className="text-sm font-medium" style={{ color: "hsl(var(--rose))" }}>
-            Юбилей · 45 лет
+            Мой юбилей · 45 лет
           </span>
           <span className="text-2xl float-2">✨</span>
         </div>
 
         {/* Main heading */}
         <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl tracking-tight leading-[1.1] text-balance mb-6">
-          <span className="shimmer-text">45 прекрасных</span>
+          <span className="shimmer-text">Мне исполняется</span>
           <br />
-          <span className="italic text-foreground">лет вместе</span>
+          <span className="italic text-foreground">45 лет!</span>
         </h1>
 
         {/* Subheading */}
         <p className="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-4"
           style={{ color: "hsl(var(--muted-foreground))" }}>
-          Дорогая именинница, с радостью приглашаем вас на торжество в честь
-          вашего замечательного юбилея!
+          Дорогие мои, я очень хочу отметить этот особенный день вместе с вами —
+          самыми близкими и любимыми людьми в моей жизни!
         </p>
 
         <p className="font-serif text-2xl md:text-3xl italic mb-10"
           style={{ color: "hsl(var(--rose))" }}>
-          «45 — это расцвет, мудрость и красота»
+          «Приходите — буду счастлива вас обнять!»
         </p>
 
         {/* CTA */}
@@ -56,7 +56,7 @@ export function Hero() {
             className="group inline-flex items-center gap-3 px-8 py-4 rounded-full text-base font-medium transition-all duration-300 pulse-glow"
             style={{ background: "hsl(var(--primary))", color: "hsl(var(--primary-foreground))" }}
           >
-            🎉 Узнать детали праздника
+            🎉 Детали моего праздника
             <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
           </a>
           <a
