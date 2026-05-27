@@ -1,49 +1,80 @@
-import { ArrowRight } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 export function Hero() {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    setTimeout(() => el.classList.add("visible"), 100);
+  }, []);
+
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-6 pt-20 relative">
-      <div className="max-w-4xl mx-auto text-center">
-        {/* Subtle badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sage/10 text-sage mb-8">
-          <span className="w-2 h-2 rounded-full bg-sage" />
-          <span className="text-sm">Спокойный подход к работе</span>
+    <section className="min-h-screen flex flex-col items-center justify-center px-6 pt-20 relative overflow-hidden">
+      {/* Decorative blurred circles */}
+      <div className="absolute top-20 left-10 w-64 h-64 rounded-full float-1"
+        style={{ background: "radial-gradient(circle, hsla(330,50%,80%,0.4) 0%, transparent 70%)" }} />
+      <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full float-2"
+        style={{ background: "radial-gradient(circle, hsla(40,70%,80%,0.4) 0%, transparent 70%)" }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
+        style={{ background: "radial-gradient(circle, hsla(270,30%,85%,0.2) 0%, transparent 70%)" }} />
+
+      <div ref={ref} className="reveal max-w-4xl mx-auto text-center relative z-10">
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full mb-8 reveal-scale visible"
+          style={{ background: "hsla(330,50%,60%,0.12)", border: "1px solid hsla(330,50%,60%,0.25)" }}>
+          <span className="text-2xl float-1">🌸</span>
+          <span className="text-sm font-medium" style={{ color: "hsl(var(--rose))" }}>
+            Юбилей · 45 лет
+          </span>
+          <span className="text-2xl float-2">✨</span>
         </div>
 
-        {/* Main heading with serif font */}
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl tracking-tight text-foreground leading-[1.1] text-balance mb-8">
-          Продуктивность без
+        {/* Main heading */}
+        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl tracking-tight leading-[1.1] text-balance mb-6">
+          <span className="shimmer-text">45 прекрасных</span>
           <br />
-          <span className="italic">лишнего шума</span>
+          <span className="italic text-foreground">лет вместе</span>
         </h1>
 
         {/* Subheading */}
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-12">
-          Hvile — инструмент осознанной продуктивности для тех, кто верит: лучшая работа рождается в тишине, а не в хаосе.
-          Фокус на главном.
+        <p className="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-4"
+          style={{ color: "hsl(var(--muted-foreground))" }}>
+          Дорогая именинница, с радостью приглашаем вас на торжество в честь
+          вашего замечательного юбилея!
         </p>
 
-        {/* CTA Buttons */}
+        <p className="font-serif text-2xl md:text-3xl italic mb-10"
+          style={{ color: "hsl(var(--rose))" }}>
+          «45 — это расцвет, мудрость и красота»
+        </p>
+
+        {/* CTA */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="#contact"
-            className="group inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground rounded-full text-base hover:opacity-90 transition-all duration-300"
+            href="#details"
+            className="group inline-flex items-center gap-3 px-8 py-4 rounded-full text-base font-medium transition-all duration-300 pulse-glow"
+            style={{ background: "hsl(var(--primary))", color: "hsl(var(--primary-foreground))" }}
           >
-            Начать бесплатно
-            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-300" />
+            🎉 Узнать детали праздника
+            <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
           </a>
           <a
-            href="#philosophy"
-            className="inline-flex items-center gap-2 px-8 py-4 text-muted-foreground hover:text-foreground transition-colors duration-300"
+            href="#program"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full transition-colors duration-300"
+            style={{ color: "hsl(var(--muted-foreground))" }}
           >
-            Наша философия
+            Программа вечера
           </a>
         </div>
       </div>
 
-      {/* Decorative element */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2">
-        <div className="w-px h-16 bg-border" />
+      {/* Scroll indicator */}
+      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+        <span className="text-xs tracking-widest uppercase" style={{ color: "hsl(var(--muted-foreground))" }}>
+          листайте ниже
+        </span>
+        <div className="w-px h-12" style={{ background: "hsl(var(--border))" }} />
       </div>
     </section>
   );

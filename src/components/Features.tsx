@@ -1,52 +1,86 @@
-import { Clock, Layers, Moon, Sparkles } from "lucide-react";
-
-const features = [
+const program = [
   {
-    icon: Clock,
-    title: "Неспешное планирование",
-    description: "Тайм-блоки, которые уважают ваши естественные ритмы. Между задачами всегда есть время на паузу.",
+    icon: "🎊",
+    title: "Торжественный приём",
+    description: "Встреча гостей, живая музыка и аперитив в уютной атмосфере.",
+    time: "18:00",
   },
   {
-    icon: Layers,
-    title: "Фокус на текущем",
-    description: "Видите только то, что важно сейчас. Остальное терпеливо ждёт, пока вы будете готовы.",
+    icon: "🥂",
+    title: "Праздничный ужин",
+    description: "Изысканные блюда, тосты за именинницу и тёплые слова от близких.",
+    time: "19:00",
   },
   {
-    icon: Moon,
-    title: "Часы тишины",
-    description: "Автоматические периоды покоя, которые защищают ваше время глубокой работы от отвлечений.",
+    icon: "🎭",
+    title: "Развлекательная программа",
+    description: "Сюрпризы, конкурсы и весёлые игры — скучать не придётся!",
+    time: "20:30",
   },
   {
-    icon: Sparkles,
-    title: "Мягкая аналитика",
-    description: "Вдумчивые наблюдения за вашими паттернами — без осуждения, с поддержкой.",
+    icon: "🎂",
+    title: "Торт и танцы",
+    description: "Торжественное разрезание юбилейного торта и танцы до полуночи.",
+    time: "22:00",
   },
 ];
 
 export function Features() {
   return (
-    <section id="features" className="py-32 px-6">
+    <section id="program" className="py-32 px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-20">
-          <span className="text-sm uppercase tracking-widest text-terracotta mb-4 block">Возможности</span>
-          <h2 className="font-serif text-4xl md:text-5xl tracking-tight text-foreground text-balance">
-            Инструменты, дарящие покой
+        <div className="text-center mb-20 reveal">
+          <span className="text-sm uppercase tracking-widest font-medium block mb-4"
+            style={{ color: "hsl(var(--terracotta))" }}>
+            Программа вечера
+          </span>
+          <h2 className="font-serif text-4xl md:text-5xl tracking-tight text-balance">
+            Этот вечер мы посвящаем вам ✨
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {features.map((feature, index) => (
+        <div className="grid md:grid-cols-2 gap-6">
+          {program.map((item, index) => (
             <div
               key={index}
-              className="group p-8 md:p-10 rounded-2xl bg-card border border-border hover:border-sage/30 transition-colors duration-500"
+              className="reveal group p-8 md:p-10 rounded-3xl border transition-all duration-500 hover:shadow-lg"
+              style={{
+                background: "hsl(var(--card))",
+                borderColor: "hsl(var(--border))",
+                transitionDelay: `${index * 0.1}s`,
+              }}
             >
-              <div className="w-12 h-12 rounded-full bg-sage/10 flex items-center justify-center mb-6 group-hover:bg-sage/20 transition-colors duration-500">
-                <feature.icon size={24} className="text-sage" />
+              <div className="flex items-start gap-4">
+                <div className="text-4xl float-1 group-hover:scale-110 transition-transform duration-300"
+                  style={{ animationDelay: `${index * 0.5}s` }}>
+                  {item.icon}
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="font-serif text-xl">{item.title}</h3>
+                    <span className="text-sm font-medium px-3 py-1 rounded-full"
+                      style={{ background: "hsla(330,50%,60%,0.1)", color: "hsl(var(--rose))" }}>
+                      {item.time}
+                    </span>
+                  </div>
+                  <p className="leading-relaxed" style={{ color: "hsl(var(--muted-foreground))" }}>
+                    {item.description}
+                  </p>
+                </div>
               </div>
-              <h3 className="font-serif text-2xl text-foreground mb-3">{feature.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
             </div>
           ))}
+        </div>
+
+        {/* Decorative divider */}
+        <div className="text-center mt-16 reveal">
+          <div className="inline-flex items-center gap-3 text-2xl">
+            <span className="float-1">🌸</span>
+            <span className="float-2">💫</span>
+            <span className="float-3">✨</span>
+            <span className="float-1">🌷</span>
+            <span className="float-2">💖</span>
+          </div>
         </div>
       </div>
     </section>

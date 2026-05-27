@@ -1,88 +1,94 @@
-import { Check } from "lucide-react";
-
-const plans = [
+const details = [
   {
-    name: "Личный",
-    price: "Бесплатно",
-    description: "Для тех, кто начинает путь осознанной продуктивности",
-    features: ["Неспешное управление задачами", "Ежедневная сессия фокуса", "Еженедельные размышления", "Доступ в приложении"],
-    cta: "Начать бесплатно",
-    highlighted: false,
+    icon: "📅",
+    label: "Дата",
+    value: "15 июня 2025 года",
+    note: "Суббота",
   },
   {
-    name: "Профи",
-    price: "990 ₽",
-    period: "/мес",
-    description: "Для тех, кто готов углубить практику",
-    features: [
-      "Всё из тарифа Личный",
-      "Безлимитные сессии фокуса",
-      "Расписание часов тишины",
-      "Мягкая аналитика",
-      "Синхронизация с календарём",
-      "Приоритетная поддержка",
-    ],
-    cta: "Начать путь",
-    highlighted: true,
+    icon: "🕕",
+    label: "Время",
+    value: "18:00",
+    note: "Сбор гостей с 17:30",
+  },
+  {
+    icon: "📍",
+    label: "Место",
+    value: "Ресторан «Белая роза»",
+    note: "ул. Садовая, д. 12",
+  },
+  {
+    icon: "👗",
+    label: "Дресс-код",
+    value: "Праздничный",
+    note: "Нежные и пастельные тона",
   },
 ];
 
 export function Pricing() {
   return (
-    <section id="pricing" className="py-32 px-6">
+    <section id="details" className="py-32 px-6" style={{ background: "hsl(var(--card))" }}>
       <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-20">
-          <span className="text-sm uppercase tracking-widest text-amber mb-4 block">Тарифы</span>
-          <h2 className="font-serif text-4xl md:text-5xl tracking-tight text-foreground mb-4 text-balance">
-            Простые и честные цены
+        <div className="text-center mb-16 reveal">
+          <span className="text-sm uppercase tracking-widest font-medium block mb-4"
+            style={{ color: "hsl(var(--rose))" }}>
+            Детали торжества
+          </span>
+          <h2 className="font-serif text-4xl md:text-5xl tracking-tight text-balance">
+            Всё, что нужно знать 🎀
           </h2>
-          <p className="text-muted-foreground text-lg">Без скрытых платежей. Отмена в любой момент.</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {plans.map((plan, index) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {details.map((item, i) => (
             <div
-              key={index}
-              className={`p-8 md:p-10 rounded-2xl border ${
-                plan.highlighted ? "bg-primary text-primary-foreground border-primary" : "bg-card border-border"
-              }`}
+              key={i}
+              className="reveal text-center p-8 rounded-3xl border hover:shadow-md transition-all duration-500"
+              style={{
+                borderColor: "hsl(var(--border))",
+                background: "hsl(var(--background))",
+                transitionDelay: `${i * 0.12}s`,
+              }}
             >
-              <h3 className={`text-xl mb-2 ${plan.highlighted ? "text-primary-foreground" : "text-foreground"}`}>
-                {plan.name}
-              </h3>
-              <div className="flex items-baseline gap-1 mb-4">
-                <span className="font-serif text-5xl tracking-tight">{plan.price}</span>
-                {plan.period && (
-                  <span className={plan.highlighted ? "text-primary-foreground/70" : "text-muted-foreground"}>
-                    {plan.period}
-                  </span>
-                )}
+              <div className="text-4xl mb-4 float-1" style={{ animationDelay: `${i * 0.7}s` }}>
+                {item.icon}
               </div>
-              <p className={`mb-8 ${plan.highlighted ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
-                {plan.description}
-              </p>
-
-              <ul className="space-y-3 mb-8">
-                {plan.features.map((feature, i) => (
-                  <li key={i} className="flex items-center gap-3">
-                    <Check size={18} className="text-sage" />
-                    <span className={plan.highlighted ? "text-primary-foreground/90" : "text-foreground"}>
-                      {feature}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-
-              <a
-                href="#contact"
-                className={`block w-full py-3.5 rounded-full text-center transition-opacity duration-300 hover:opacity-90 ${
-                  plan.highlighted ? "bg-primary-foreground text-primary" : "bg-primary text-primary-foreground"
-                }`}
-              >
-                {plan.cta}
-              </a>
+              <div className="text-xs uppercase tracking-widest mb-2 font-medium"
+                style={{ color: "hsl(var(--muted-foreground))" }}>
+                {item.label}
+              </div>
+              <div className="font-serif text-lg font-semibold mb-1">{item.value}</div>
+              <div className="text-sm" style={{ color: "hsl(var(--muted-foreground))" }}>{item.note}</div>
             </div>
           ))}
+        </div>
+
+        {/* Main invite card */}
+        <div className="reveal rounded-3xl p-10 md:p-14 text-center relative overflow-hidden"
+          style={{
+            background: "linear-gradient(135deg, hsl(330,35%,40%) 0%, hsl(270,30%,45%) 50%, hsl(40,70%,50%) 100%)",
+            color: "white",
+          }}>
+          <div className="absolute top-4 left-4 text-3xl float-1">✨</div>
+          <div className="absolute top-4 right-4 text-3xl float-2">🌸</div>
+          <div className="absolute bottom-4 left-8 text-2xl float-3">💫</div>
+          <div className="absolute bottom-4 right-8 text-2xl float-1">🌷</div>
+
+          <div className="text-5xl mb-6 sparkle-anim">🎉</div>
+          <h3 className="font-serif text-3xl md:text-4xl mb-4 italic">
+            Будем рады видеть вас!
+          </h3>
+          <p className="text-lg opacity-90 mb-8 max-w-xl mx-auto">
+            Подтвердите, пожалуйста, своё присутствие до 10 июня,
+            чтобы мы могли подготовиться к встрече.
+          </p>
+          <a
+            href="#confirm"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-medium transition-all duration-300 hover:scale-105"
+            style={{ background: "white", color: "hsl(var(--primary))" }}
+          >
+            ✉️ Подтвердить приход
+          </a>
         </div>
       </div>
     </section>

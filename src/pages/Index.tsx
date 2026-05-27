@@ -6,10 +6,15 @@ import { Testimonial } from "@/components/Testimonial";
 import { Pricing } from "@/components/Pricing";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { FloatingPetals } from "@/components/FloatingPetals";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const Index = () => {
+  useScrollReveal();
+
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen relative">
+      <FloatingPetals />
       <Header />
       <Hero />
       <Philosophy />

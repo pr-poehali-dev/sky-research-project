@@ -1,44 +1,65 @@
 export function Philosophy() {
   return (
-    <section id="philosophy" className="py-32 px-6 bg-card">
+    <section id="details" className="py-32 px-6" style={{ background: "hsl(var(--card))" }}>
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Left: Image */}
-          <div className="relative aspect-[4/5] bg-muted rounded-lg overflow-hidden">
+          <div className="relative aspect-[4/5] rounded-3xl overflow-hidden reveal-left">
             <img
-              src="/minimal-scandinavian-workspace-with-natural-light-.jpg"
-              alt="Спокойное рабочее пространство"
+              src="/professional-woman-portrait--soft-lighting--neutra.jpg"
+              alt="Именинница"
               className="w-full h-full object-cover"
             />
-            {/* Decorative accent */}
-            <div className="absolute bottom-6 left-6 right-6 p-6 bg-background/90 backdrop-blur-sm rounded-lg">
-              <p className="text-sm text-muted-foreground italic">
-                «Когда жизнь и работа движутся в гармонии, лучшие идеи не просто появляются — они текут сами собой.»
+            <div className="absolute bottom-6 left-6 right-6 p-6 rounded-2xl backdrop-blur-sm"
+              style={{ background: "hsla(340,30%,97%,0.9)" }}>
+              <p className="text-sm italic leading-relaxed" style={{ color: "hsl(var(--muted-foreground))" }}>
+                «Красота женщины не в её лице — она светится в её душе,
+                в заботе, которую она дарит, и в страсти, которую она несёт.»
               </p>
             </div>
+            {/* Floating decorations around image */}
+            <div className="absolute -top-4 -right-4 text-4xl float-1">🌸</div>
+            <div className="absolute -bottom-2 -left-4 text-3xl float-2">✨</div>
           </div>
 
-          {/* Right: Text content */}
-          <div className="flex flex-col gap-8">
-            <span className="text-sm uppercase tracking-widest text-sage">Наша философия</span>
-            <h2 className="font-serif text-4xl md:text-5xl tracking-tight text-foreground leading-tight text-balance">
-              Осознанная работа и тихий фокус
+          {/* Right: Text */}
+          <div className="flex flex-col gap-8 reveal-right">
+            <span className="text-sm uppercase tracking-widest font-medium"
+              style={{ color: "hsl(var(--rose))" }}>
+              С любовью и теплом
+            </span>
+            <h2 className="font-serif text-4xl md:text-5xl tracking-tight leading-tight text-balance">
+              Дорогой и любимый человек
             </h2>
-            <div className="space-y-6 text-muted-foreground leading-relaxed">
+            <div className="space-y-5 leading-relaxed" style={{ color: "hsl(var(--muted-foreground))" }}>
               <p>
-                Hvile родился из простого наблюдения: самая значимая работа редко происходит среди постоянных
-                уведомлений и бесконечных списков задач. Она рождается в моменты тишины.
+                Сорок пять лет — это особенная дата. Это жизнь, полная любви,
+                тепла, мудрости и бесценного опыта. Это годы, наполненные
+                смехом и слезами радости, достижениями и мечтами.
               </p>
               <p>
-                Мы создали инструмент, который уважает ритм глубокой работы — создаёт пространство для концентрации,
-                рефлексии и того сосредоточенного внимания, которое превращает обычные задачи в мастерство.
+                Именно сейчас, в этот прекрасный день, мы хотим окружить вас
+                заботой и вниманием, которых вы заслуживаете больше всего на свете.
               </p>
             </div>
-            <div className="pt-4">
-              <a href="#features" className="inline-flex items-center gap-2 text-foreground group">
-                <span className="border-b border-foreground pb-0.5">Наш подход</span>
-                <span className="text-terracotta group-hover:translate-x-1 transition-transform duration-300">→</span>
-              </a>
+
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-4 pt-4">
+              {[
+                { num: "45", label: "лет красоты" },
+                { num: "∞", label: "любви" },
+                { num: "1", label: "незаменимая" },
+              ].map((item, i) => (
+                <div key={i} className="text-center p-4 rounded-2xl reveal-scale"
+                  style={{ background: "hsla(330,50%,60%,0.08)", transitionDelay: `${i * 0.15}s` }}>
+                  <div className="font-serif text-3xl font-semibold" style={{ color: "hsl(var(--rose))" }}>
+                    {item.num}
+                  </div>
+                  <div className="text-xs mt-1" style={{ color: "hsl(var(--muted-foreground))" }}>
+                    {item.label}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

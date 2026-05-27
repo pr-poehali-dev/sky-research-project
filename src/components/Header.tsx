@@ -1,103 +1,31 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
-
 export function Header() {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm">
-      <nav className="mx-auto max-w-6xl px-6 py-5 flex items-center justify-between">
-        <a href="#" className="font-serif text-2xl tracking-tight text-foreground">
-          Hvile
-        </a>
-
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-10">
-          <a
-            href="#philosophy"
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
-          >
-            Философия
-          </a>
-          <a
-            href="#features"
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
-          >
-            Возможности
-          </a>
-          <a
-            href="#pricing"
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
-          >
-            Тарифы
-          </a>
-          <a
-            href="#contact"
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
-          >
-            Контакты
-          </a>
+    <header className="fixed top-0 left-0 right-0 z-50 px-6 py-4 backdrop-blur-md"
+      style={{ background: "hsla(340,30%,97%,0.85)", borderBottom: "1px solid hsl(var(--border))" }}>
+      <div className="max-w-6xl mx-auto flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <span className="text-xl float-1">🌸</span>
+          <span className="font-serif text-lg font-semibold">Юбилей · 45</span>
         </div>
-
-        <a
-          href="#contact"
-          className="hidden md:inline-flex px-5 py-2.5 bg-primary text-primary-foreground text-sm rounded-full hover:opacity-90 transition-opacity duration-300"
-        >
-          Начать путь
+        <nav className="hidden md:flex items-center gap-8">
+          {[
+            { href: "#details", label: "О вечере" },
+            { href: "#program", label: "Программа" },
+            { href: "#confirm", label: "Подтвердить" },
+          ].map((link) => (
+            <a key={link.href} href={link.href}
+              className="text-sm transition-colors duration-300 hover:opacity-70"
+              style={{ color: "hsl(var(--foreground))" }}>
+              {link.label}
+            </a>
+          ))}
+        </nav>
+        <a href="#confirm"
+          className="px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:opacity-90"
+          style={{ background: "hsl(var(--primary))", color: "hsl(var(--primary-foreground))" }}>
+          Я приду! 🎉
         </a>
-
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 text-foreground"
-          aria-label="Открыть меню"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </nav>
-
-      {/* Mobile Navigation */}
-      {isOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border">
-          <div className="flex flex-col px-6 py-6 gap-4">
-            <a
-              href="#philosophy"
-              onClick={() => setIsOpen(false)}
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Философия
-            </a>
-            <a
-              href="#features"
-              onClick={() => setIsOpen(false)}
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Возможности
-            </a>
-            <a
-              href="#pricing"
-              onClick={() => setIsOpen(false)}
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Тарифы
-            </a>
-            <a
-              href="#contact"
-              onClick={() => setIsOpen(false)}
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Контакты
-            </a>
-            <a
-              href="#contact"
-              onClick={() => setIsOpen(false)}
-              className="mt-2 px-5 py-2.5 bg-primary text-primary-foreground text-sm rounded-full text-center"
-            >
-              Начать путь
-            </a>
-          </div>
-        </div>
-      )}
+      </div>
     </header>
   );
 }
