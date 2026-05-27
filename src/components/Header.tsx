@@ -20,7 +20,9 @@ export function Header() {
             </a>
           ))}
         </nav>
-        <a href="#confirm"
+        <a href="https://vk.ru/id542075190"
+          target="_blank"
+          rel="noopener noreferrer"
           className="px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:opacity-90"
           style={{ background: "hsl(var(--primary))", color: "hsl(var(--primary-foreground))" }}>
           Я приду! 🎉
